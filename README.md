@@ -26,11 +26,11 @@ In GitHub, set **Settings > Pages > Build and deployment > Source** to **GitHub 
 
 ### Repository setup
 
-1. Create a new repository under `https://github.com/mukw-labs/`.
+1. Create or use the repository at `https://github.com/nswmesh/nswmesh.au`.
 2. Add the remote locally:
 
 ```bash
-git remote add origin https://github.com/mukw-labs/<REPO>.git
+git remote add origin https://github.com/nswmesh/nswmesh.au.git
 ```
 
 3. Push the repository:
@@ -43,17 +43,17 @@ git push -u origin main
 
 If the GitHub Pages URL differs from the defaults, set these repository variables in GitHub:
 
-- `DOCUSAURUS_URL`, for example `https://mukw-labs.github.io`
-- `DOCUSAURUS_BASE_URL`, for example `/your-repo-name/`
+- `DOCUSAURUS_URL`, for example `https://nswmesh.github.io`
+- `DOCUSAURUS_BASE_URL`, for example `/nswmesh.au/`
 
 ### Local development configuration
 
 For local builds, optionally set the repository override:
 
 ```bash
-export DOCUSAURUS_REPOSITORY=mukw-labs/<REPO>
-export DOCUSAURUS_URL=https://mukw-labs.github.io
-export DOCUSAURUS_BASE_URL=/<REPO>/
+export DOCUSAURUS_REPOSITORY=nswmesh/nswmesh.au
+export DOCUSAURUS_URL=https://nswmesh.github.io
+export DOCUSAURUS_BASE_URL=/nswmesh.au/
 ```
 
 This ensures Docusaurus uses the correct repo path when building documentation links and page URLs.
