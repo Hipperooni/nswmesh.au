@@ -48,6 +48,15 @@ const config = {
     ]
   ],
 
+  plugins: [
+    [
+      'docusaurus-plugin-image-zoom',
+      {
+        selector: '.theme-doc-markdown img:not(.no-zoom)'
+      }
+    ]
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -100,6 +109,16 @@ const config = {
       },
       colorMode: {
         respectPrefersColorScheme: true
+      },
+      zoom: {
+        background: {
+          light: 'rgb(255, 255, 255)',
+          dark: 'rgb(50, 50, 50)'
+        },
+        config: {
+          margin: 24,
+          scrollOffset: 0
+        }
       },
       tableOfContents: {
         minHeadingLevel: 2,

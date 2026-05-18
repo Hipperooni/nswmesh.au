@@ -12,7 +12,11 @@ const sidebars = {
       items: [
         'meshcore/overview',
         'meshcore/frequency',
-        'meshcore/channels',
+        {
+          type: 'doc',
+          id: 'meshcore/channels',
+          label: 'Channels and Regions'
+        },
         'meshcore/repeaters',
         'meshcore/observers',
         'meshcore/maps'
@@ -24,6 +28,39 @@ const sidebars = {
       collapsed: false,
       items: [
         'meshtastic/overview'
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Hardware',
+      collapsed: false,
+      items: [
+        {
+          type: 'category',
+          label: 'Repeaters',
+          collapsed: false,
+          items: [
+            {
+              type: 'doc',
+              id: 'hardware/repeaters/overview',
+              label: 'Overview'
+            },
+            'hardware/repeaters/clandestine-nodes',
+            'hardware/repeaters/aldi-solar-repeater'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Companions',
+          collapsed: false,
+          items: [
+            {
+              type: 'doc',
+              id: 'hardware/companions/overview',
+              label: 'Overview'
+            }
+          ]
+        }
       ]
     },
     {

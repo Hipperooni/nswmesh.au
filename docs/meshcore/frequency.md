@@ -3,6 +3,7 @@ title: Frequency
 ---
 
 import {DISCORD_INVITE_URL} from '@site/src/constants/links';
+import CopyCommand from '@site/src/components/CopyCommand';
 
 # MeshCore Frequency
 
@@ -12,11 +13,13 @@ For more information and to get a better understanding of frequency selection in
 
 ## Frequency Profiles
 
-| Profile | Frequency | Bandwidth | Spreading Factor | Coding Rate |
-| --- | --- | --- | --- | --- |
-| **Australia (Mid)** | **915.075 MHz** | **125 kHz** | **9** | **4/5** |
-| Australia (Narrow) | 916.575 MHz | 62.5 kHz | 7 | 4/8 |
-| Australia (Wide) | 915.800 MHz | 250 kHz | 11 | 4/5 |
+| Profile | Frequency | Bandwidth | Spreading Factor | Coding Rate | CLI command |
+| --- | --- | --- | --- | --- | --- |
+| **Australia (Mid)** | **915.075 MHz** | **125 kHz** | **9** | **4/5** | <CopyCommand command="set radio 915.075,125,9,5" /> |
+| Australia (Narrow) | 916.575 MHz | 62.5 kHz | 7 | 4/8 | <CopyCommand command="set radio 916.575,62.5,7,8" /> |
+| Australia (Wide) | 915.800 MHz | 250 kHz | 11 | 4/5 | <CopyCommand command="set radio 915.800,250,11,5" /> |
+
+The CLI command format is `set radio <freq>,<bw>,<sf>,<cr>`. The coding rate value uses the denominator from `4/x`, so `4/5` is entered as `5`.
 
 ## Current NSW Usage
 

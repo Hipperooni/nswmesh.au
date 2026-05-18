@@ -1,8 +1,10 @@
 ---
-title: Channels
+title: Channels and Regions
 ---
 
-# Channels
+import CopyCommand from '@site/src/components/CopyCommand';
+
+# Channels and Regions
 
 MeshCore channels are used to separate different kinds of conversations on the mesh. Keep public traffic simple and predictable so new users can find help, test their node, and understand which channel is appropriate for their message.
 
@@ -65,13 +67,18 @@ In this format:
 
 Examples:
 
-| Scope | Suggested use |
-| --- | --- |
-| `au` | Australia-wide scoped traffic. |
-| `au-nsw` | NSW-wide scoped traffic. |
-| `au-nsw-syd` | Sydney metro scoped traffic. |
-| `au-nsw-gos` | Central Coast scoped traffic. |
-| `au-nsw-ntl` | Newcastle and Hunter scoped traffic. |
-| `au-nsw-wol` | Illawarra and Wollongong scoped traffic. |
+| Region | Suggested use | CLI command | Who |
+| --- | --- | --- | --- |
+| `au` | Australia-wide scoped traffic. | <CopyCommand command="region put au" /><br /><CopyCommand command="region allowf au" /> | Everyone |
+| `au-nsw` | NSW-wide scoped traffic. | <CopyCommand command="region put au-nsw" /><br /><CopyCommand command="region allowf au-nsw" /> | Everyone |
+| `au-nsw-syd` | Sydney metro scoped traffic. | <CopyCommand command="region put au-nsw-syd" /><br /><CopyCommand command="region allowf au-nsw-syd" /> | Sydney |
+| `au-nsw-gos` | Central Coast scoped traffic. | <CopyCommand command="region put au-nsw-gos" /><br /><CopyCommand command="region allowf au-nsw-gos" /> | Gosford |
+| `au-nsw-ntl` | Newcastle and Hunter scoped traffic. | <CopyCommand command="region put au-nsw-ntl" /><br /><CopyCommand command="region allowf au-nsw-ntl" /> | Newcastle |
+| `au-nsw-wol` | Illawarra and Wollongong scoped traffic. | <CopyCommand command="region put au-nsw-wol" /><br /><CopyCommand command="region allowf au-nsw-wol" /> | Wollongong |
+| Save | Save the regions. | <CopyCommand command="region save" /> | Everyone |
 
 A Sydney-specific message belongs in a Sydney channel scoped to `au-nsw-syd`; a state-wide message belongs in an NSW channel scoped to `au-nsw`; general first contact can stay in Public.
+
+All NSW repeaters should generally allow `au` and `au-nsw`. Only add the IATA-level region that matches the repeater location. For example, Sydney repeaters should allow `au-nsw-syd`, Central Coast repeaters should allow `au-nsw-gos`, Newcastle and Hunter repeaters should allow `au-nsw-ntl`, and Illawarra repeaters should allow `au-nsw-wol`.
+
+For a deeper explanation of MeshCore regions, see Zindello Industries' article [MeshCore Regions: what they are, how they work, and why they matter](https://zindello.com.au/meshcore-regions-what-they-are-how-they-work-and-why-they-matter/).
