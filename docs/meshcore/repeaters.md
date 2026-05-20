@@ -31,7 +31,9 @@ Examples:
 
 Use a suburb, town, landmark, hill, or other recognisable location. If there are multiple repeaters in the same area, add a suffix such as `A`, `B`, `C`, `North`, or `East`.
 
-You may need to shorten words to fit the character limit, such as `Nth` for `North` or `Hts` for `Heights`. Emojis can use more characters than they appear to, so keep names short.
+You may need to shorten words to fit the length limit, such as `Nth` for `North` or `Hts` for `Heights`. Emojis can use more characters than they appear to, so keep names short. If a location is set, the max length is 24 bytes; 32 otherwise. Emoji and unicode characters may take more than one byte.
+
+You can use this tool to help calculate lengths https://mothereff.in/byte-counter.
 
 The emoji can reference the owner if preferred, but it is not enforced.
 
@@ -62,18 +64,8 @@ These NSW Mesh defaults vary from the MeshCore defaults.
 | Multi-Acks | Enabled | <CopyCommand command="set multi.acks 1" /> |
 | Path Hash Size | 2 Bytes | <CopyCommand command="set path.hash.mode 1" /> |
 
-Useful CLI checks:
+Why these `advert.interval`? You want them to be nice and long to prevent spamming the mesh with adverts. The Zero Hop or Direct adverts don't flood the whole mesh so can be more often. We use an odd number so that way the adverts are not at the same time every day.
 
-- Flood advert interval: `get flood.advert.interval`
-- Zero-hop advert interval: `get advert.interval`
-- Multi-Acks support: `get multi.acks`
-
-Flood advert interval is set in hours with `set flood.advert.interval <hours>`. Valid values are `3` to `168`. The MeshCore default is `12` for repeaters and `0` for sensors.
-
-Zero-hop advert interval is set in minutes with `set advert.interval <minutes>`.
-
-Multi-Acks support is set with `set multi.acks <state>`, where `0` disables it and `1` enables it. The default is `0`.
+`multi.acks` support enables repeaters to reply with multiple acknowledgement packets to providing a more resilient response to queries.
 
 `path.hash.mode` only controls the path hash size used in a repeater's own advert broadcasts. It does not affect which packets the repeater forwards. A repeater running firmware 1.14 or later always forwards 1-, 2-, and 3-byte packets regardless of this setting.
-
-Path hash mode usage: `set path.hash.mode {0|1|2}`. For the NSW Mesh recommended 2-byte path hash size, use `set path.hash.mode 1`.

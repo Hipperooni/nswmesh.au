@@ -20,28 +20,13 @@ Public and hashtag channels should be treated as public. They may be heard by re
 
 Private channels are only private if the key stays private. Do not reuse a private channel name or key for unrelated groups.
 
-## Current Channels
+## Regions
 
-| Channel | Key | Suggested region scope | Purpose |
-| --- | --- | --- | --- |
-| Public | Public Channel | None | General chat for all mesh users. |
-| Test | `#test` | All users | Connection testing. Bots may auto-reply to `test`, `ping`, or `path` where available. |
-| Emergency | `#emergency` | All users | Emergency communications only. |
-| Sydney | `#sydney` | `au-nsw-syd` | Sydney metro conversation and coordination. |
-| NSW Wide | `#nsw` | `au-nsw` | State-wide coordination. |
-| Macarthur | `#macarthur` | `au-nsw-syd` | Macarthur conversation and coordination. |
-| Nepean | `#nepean` | `au-nsw-syd` | Nepean conversation and coordination. |
-| Central Coast | `#centralcoast` | `au-nsw-gos` | Central Coast conversation and coordination. |
-| Illawarra | `#illawarra` | `au-nsw-wol` | Illawarra and Wollongong conversation and coordination. |
-| Newcastle | `#newcastle` | `au-nsw-ntl` | Newcastle and Hunter conversation and coordination. |
+Region help restrict propagation of channels across the wider MeshCore mesh. Use the smallest scope that makes sense so local traffic stays local where supported. 
 
-Check with the NSW Mesh community before creating a new long-lived regional or operational channel.
+You can easily check which region using the [Eastmesh Region Tool](https://regions.eastmesh.au).
 
-## Region Scopes
-
-Region scopes help restrict propagation of scoped channels across the wider MeshCore mesh. Use the smallest scope that makes sense so local traffic stays local where supported.
-
-Public cannot be scoped.
+It is bad practice to scope the Public channel to a region as this can lead to one-sided conversations.
 
 Use lower-case components separated by hyphens.
 
@@ -63,7 +48,7 @@ In this format:
 | --- | --- | --- |
 | Country | `au` | Australia. |
 | State | `nsw` | New South Wales. |
-| IATA | `syd` | The nearest practical airport or regional IATA-style code. |
+| IATA | `syd` | The nearest practical airport or regional IATA-style code. Otherwise a community agreed 3rd tier name where IATA isnt practical|
 
 Examples:
 
@@ -81,4 +66,23 @@ A Sydney-specific message belongs in a Sydney channel scoped to `au-nsw-syd`; a 
 
 All NSW repeaters should generally allow `au` and `au-nsw`. Only add the IATA-level region that matches the repeater location. For example, Sydney repeaters should allow `au-nsw-syd`, Central Coast repeaters should allow `au-nsw-gos`, Newcastle and Hunter repeaters should allow `au-nsw-ntl`, and Illawarra repeaters should allow `au-nsw-wol`.
 
+For communities that border multiple states (e.g. Albury/Wodonga) they may be using an area specific 2nd tier like `au-hume`.
+
 For a deeper explanation of MeshCore regions, see Zindello Industries' article [MeshCore Regions: what they are, how they work, and why they matter](https://zindello.com.au/meshcore-regions-what-they-are-how-they-work-and-why-they-matter/).
+
+## Current Channels
+
+| Key | Suggested region scope | Purpose |
+| --- | --- | --- |
+| Public | None | General chat for all mesh users. |
+| `#test` | All users | Connection testing. Bots may auto-reply to `test`, `ping`, or `path` where available. |
+| `#emergency` | All users | Emergency communications only. |
+| `#sydney` | `au-nsw-syd` | Sydney metro conversation and coordination. |
+| `#nsw` | `au-nsw` | State-wide coordination. |
+| `#macarthur` | `au-nsw-syd` | Macarthur conversation and coordination. |
+| `#nepean` | `au-nsw-syd` | Nepean conversation and coordination. |
+| `#centralcoast` | `au-nsw-gos` | Central Coast conversation and coordination. |
+| `#illawarra` | `au-nsw-wol` | Illawarra and Wollongong conversation and coordination. |
+| `#newcastle` | `au-nsw-ntl` | Newcastle and Hunter conversation and coordination. |
+
+Check with the NSW Mesh community before creating a new long-lived regional or operational channel.
