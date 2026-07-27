@@ -3,6 +3,7 @@ title: Channels and Regions
 ---
 
 import CopyCommand from '@site/src/components/CopyCommand';
+import RegionMap from '@site/src/components/RegionMap';
 
 # Channels and Regions
 
@@ -22,9 +23,12 @@ Private channels are only private if the key stays private. Do not reuse a priva
 
 ## Regions
 
-Region help restrict propagation of channels across the wider MeshCore mesh. Use the smallest scope that makes sense so local traffic stays local where supported. 
+Regions help restrict propagation of local data to the wider mesh where it is less useful. Use the smallest scope that makes sense so local traffic stays local where supported. 
 
-You can easily check which region using the [Eastmesh Region Tool](https://regions.eastmesh.au).
+You can use the map below for guidance on which regions to include. You can also try the [Eastmesh Region Tool](https://regions.eastmesh.au).
+Please note this map is only intended as a guide and not as a prescriptive resource. If you're close to a border you may choose to include multiple regions depending on geography or repeater links.
+
+<RegionMap geojson="/geo/All-NSW-Regions.geojson" />
 
 It is bad practice to scope the Public channel to a region as this can lead to one-sided conversations.
 
