@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="nmLogo" width="450" height="550" viewBox="0 0 450 550" version="1.1" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round">
+<title>NSW Mesh</title>
+<defs>
+  <linearGradient id="nmTextGrad" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(316.352484,0,0,316.352484,60.69951,496.247932)"><stop offset="0" style="stop-color:rgb(255,106,0);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(225,29,72);stop-opacity:1"/></linearGradient>
+  <linearGradient id="nmLineGrad" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,79.987295,-59.389495,0,67.515184,37.688305)"><stop offset="0" stop-color="#ff6a00"/><stop offset="0.49" stop-color="#f75613"/><stop offset="1" stop-color="#e11d48"/></linearGradient>
+  <linearGradient id="nmNodeGrad" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,79.987295,-62.125589,0,67.515184,37.688305)"><stop offset="0" stop-color="#ff6a00"/><stop offset="0.49" stop-color="#f75613"/><stop offset="1" stop-color="#e11d48"/></linearGradient>
+  <linearGradient id="nmPulseGrad" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,79.987295,-59.389495,0,67.515184,37.688305)"><stop offset="0" stop-color="#ffc078"/><stop offset="0.49" stop-color="#ff9a6b"/><stop offset="1" stop-color="#ff7d9e"/></linearGradient>
+</defs>
+<style>
+  #nmLogo .nm-ltr { opacity: 0; animation: nmLtrIn 0.858s cubic-bezier(.22,.9,.3,1) both; }
+  @keyframes nmLtrIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  #nmLogo .nm-edge {
+    fill: none; stroke: url(#nmLineGrad); stroke-width: 1.58px;
+    stroke-dasharray: 100 300; stroke-dashoffset: 104;
+    animation: nmDrawF 0.484s cubic-bezier(.4,0,.2,1) both;
+  }
+  #nmLogo .nm-edge.nm-rev { stroke-dashoffset: -104; animation-name: nmDrawR; }
+  @keyframes nmDrawF { from { stroke-dashoffset: 104; } to { stroke-dashoffset: 0; } }
+  @keyframes nmDrawR { from { stroke-dashoffset: -104; } to { stroke-dashoffset: 0; } }
+
+  #nmLogo .nm-node {
+    fill: url(#nmNodeGrad); opacity: 0;
+    transform-box: fill-box; transform-origin: 50% 50%;
+    animation: nmNodeIn 0.55s cubic-bezier(.2,1.35,.4,1) both;
+  }
+  @keyframes nmNodeIn {
+    from { opacity: 0; transform: scale(0); }
+    55%  { opacity: 1; }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  #nmLogo .nm-ping {
+    fill: none; stroke: #ff8a3d; stroke-width: .9px; opacity: 0;
+    transform-box: fill-box; transform-origin: 50% 50%;
+    animation: nmPing 1.045s cubic-bezier(.12,.7,.3,1) forwards;
+  }
+  @keyframes nmPing {
+    0% { opacity: .8; transform: scale(1); }
+    100% { opacity: 0; transform: scale(3.6); }
+  }
+
+  #nmLogo .nm-pk {
+    fill: none; stroke: url(#nmPulseGrad); stroke-width: 2.4px; stroke-linecap: round;
+    opacity: .88;
+    stroke-dasharray: 15 260; stroke-dashoffset: 20;
+    animation: nmPkF 8.38s linear infinite both;
+  }
+  #nmLogo .nm-pk.nm-rev { stroke-dashoffset: -106; animation-name: nmPkR; }
+  @keyframes nmPkF {
+    0% { stroke-dashoffset: 20; }
+    5.251% { stroke-dashoffset: -106; }
+    100% { stroke-dashoffset: -106; }
+  }
+  @keyframes nmPkR {
+    0% { stroke-dashoffset: -106; }
+    5.251% { stroke-dashoffset: 20; }
+    100% { stroke-dashoffset: 20; }
+  }
+
+  #nmLogo .nm-hit {
+    fill: #ffe9d2; opacity: 0;
+    transform-box: fill-box; transform-origin: 50% 50%;
+    animation: nmHit 8.38s linear infinite both;
+  }
+  @keyframes nmHit {
+    0% { opacity: 0; transform: scale(.5); }
+    0.919% { opacity: .88; transform: scale(1); }
+    6.301% { opacity: 0;   transform: scale(1.1); }
+    100% { opacity: 0; transform: scale(.5); }
+  }
+  #nmLogo .nm-halo {
+    fill: none; stroke: #ff9a4d; stroke-width: 1.1px; opacity: 0;
+    transform-box: fill-box; transform-origin: 50% 50%;
+    animation: nmHalo 8.38s linear infinite both;
+  }
+  @keyframes nmHalo {
+    0% { opacity: 0; transform: scale(1); }
+    0.525% { opacity: .55; transform: scale(1); }
+    8.138% { opacity: 0;  transform: scale(2.7); }
+    100% { opacity: 0; transform: scale(1); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #nmLogo .nm-ltr, #nmLogo .nm-edge, #nmLogo .nm-node {
+      animation-duration: .01s !important; animation-delay: 0s !important;
+    }
+    #nmLogo .nm-ping, #nmLogo .nm-pk, #nmLogo .nm-hit, #nmLogo .nm-halo { display: none; }
+  }
+</style>
+<g id="text2" transform="matrix(1,0,0,1,4.077808,11.489265)" fill="rgb(15,23,42)" style="fill-rule:nonzero">
+  <path class="nm-ltr" style="animation-delay:0.18s" d="M114.41,435.879L84.074,369.703L84.074,435.879L66.154,435.879L66.154,346.279L93.546,346.279L123.882,412.455L123.882,346.279L141.802,346.279L141.802,435.879L114.41,435.879Z"/>
+  <path class="nm-ltr" style="animation-delay:0.28s" d="M182.778,407.335C183.205,411.516 185.082,414.844 188.41,417.319C191.824,419.793 195.962,421.031 200.826,421.031C205.178,421.031 208.848,420.305 211.834,418.855C214.821,417.319 216.314,414.929 216.314,411.687C216.314,409.383 215.376,407.548 213.498,406.183C211.621,404.817 209.104,403.708 205.946,402.855C202.874,402.001 199.504,401.148 195.834,400.295C192.165,399.441 188.453,398.417 184.698,397.223C181.029,395.943 177.616,394.236 174.458,392.103C171.386,389.969 168.912,387.196 167.034,383.783C165.157,380.284 164.218,375.889 164.218,370.599C164.218,365.479 165.712,360.956 168.698,357.031C171.77,353.02 175.952,349.905 181.242,347.687C186.618,345.383 192.72,344.231 199.546,344.231C206.202,344.231 212.133,345.553 217.338,348.199C222.544,350.844 226.64,354.471 229.626,359.079C232.698,363.687 234.234,368.892 234.234,374.695L214.778,374.695C214.437,370.428 212.944,367.1 210.298,364.711C207.738,362.321 203.941,361.127 198.906,361.127C193.957,361.127 190.16,362.023 187.514,363.815C184.869,365.607 183.546,367.868 183.546,370.599C183.546,373.159 184.485,375.164 186.362,376.615C188.24,378.065 190.714,379.26 193.786,380.199C196.944,381.137 200.357,382.033 204.026,382.887C207.781,383.655 211.493,384.636 215.162,385.831C218.832,387.025 222.202,388.647 225.274,390.695C228.432,392.743 230.949,395.473 232.826,398.887C234.704,402.215 235.642,406.481 235.642,411.687C235.642,419.964 232.528,426.407 226.298,431.015C220.069,435.623 211.322,437.927 200.058,437.927C193.146,437.927 186.96,436.604 181.498,433.959C176.037,431.313 171.685,427.687 168.442,423.079C165.2,418.471 163.45,413.223 163.194,407.335L182.778,407.335Z"/>
+  <path class="nm-ltr" style="animation-delay:0.38s" d="M272.65,435.879L249.482,346.279L267.786,346.279L285.194,417.319L302.474,346.279L322.698,346.279L340.106,417.319L357.386,346.279L375.69,346.279L352.522,435.879L327.562,435.879L312.586,378.023L297.61,435.879L272.65,435.879Z"/>
+</g>
+<g id="text3" transform="matrix(1,0,0,1,6.124275,10.25287)" fill="url(#nmTextGrad)" style="fill-rule:nonzero">
+  <path class="nm-ltr" style="animation-delay:0.54s" d="M103.171,472.169L102.954,472.169L99.266,479.545L89.432,497.405L79.815,479.617L75.983,471.663L75.766,471.663L75.766,505.287L65.425,505.287L65.425,454.815L77.067,454.815L89.432,478.46L89.577,478.46L101.797,454.815L113.511,454.815L113.511,505.287L103.171,505.287L103.171,472.169Z"/>
+  <path class="nm-ltr" style="animation-delay:0.63s" d="M163.797,505.287L163.797,454.815L198.144,454.815L198.144,464.577L174.788,464.577L174.788,474.917L194.817,474.917L194.817,484.606L174.788,484.606L174.788,495.525L198.144,495.525L198.144,505.287L163.797,505.287Z"/>
+  <path class="nm-ltr" style="animation-delay:0.72s" d="M263.181,506.154C258.746,506.154 254.986,505.407 251.9,503.913C248.815,502.37 246.188,500.394 244.019,497.983L251.25,490.68C254.672,494.537 258.89,496.465 263.904,496.465C266.603,496.465 268.604,495.911 269.905,494.802C271.207,493.693 271.858,492.223 271.858,490.391C271.858,488.993 271.472,487.836 270.701,486.92C269.929,485.956 268.363,485.305 266.001,484.968L261.011,484.317C255.66,483.642 251.732,482.027 249.225,479.472C246.766,476.917 245.537,473.519 245.537,469.277C245.537,467.011 245.971,464.938 246.839,463.058C247.706,461.178 248.936,459.563 250.526,458.213C252.165,456.864 254.142,455.827 256.456,455.104C258.818,454.333 261.493,453.947 264.482,453.947C268.29,453.947 271.641,454.55 274.533,455.755C277.425,456.96 279.908,458.72 281.981,461.033L274.678,468.409C273.473,467.011 272.002,465.878 270.267,465.01C268.58,464.095 266.434,463.637 263.831,463.637C261.373,463.637 259.541,464.07 258.336,464.938C257.131,465.806 256.528,467.011 256.528,468.554C256.528,470.289 256.986,471.542 257.902,472.314C258.866,473.085 260.409,473.639 262.53,473.977L267.519,474.772C272.725,475.592 276.582,477.207 279.089,479.617C281.595,481.979 282.849,485.353 282.849,489.74C282.849,492.15 282.415,494.368 281.547,496.393C280.679,498.417 279.402,500.153 277.715,501.599C276.076,503.045 274.027,504.178 271.568,504.997C269.11,505.769 266.314,506.154 263.181,506.154Z"/>
+  <path class="nm-ltr" style="animation-delay:0.81s" d="M361.335,484.606L342.101,484.606L342.101,505.287L331.11,505.287L331.11,454.815L342.101,454.815L342.101,474.917L361.335,474.917L361.335,454.815L372.326,454.815L372.326,505.287L361.335,505.287L361.335,484.606Z"/>
+</g>
+<g id="Waratah" transform="matrix(3.303299,0,0,3.303299,1.976956,-78.466887)">
+  <g id="Lines">
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.33s" d="M67.515,117.676C51.74,117.676 39.196,114.736 30.197,108.28"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.792s" d="M30.197,108.28C23.53,103.496 18.808,96.782 16.159,87.903"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:1.254s" d="M16.159,87.903C14.497,82.334 13.651,75.913 13.651,68.582"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.33s" d="M67.515,117.676L45.692,102.606"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.33s" d="M30.197,108.28C30.197,108.28 34.498,107.694 45.692,102.606"/>
+    <path class="nm-edge nm-rev" pathLength="100" style="animation-delay:0.792s" d="M16.159,87.903C16.159,87.903 31.299,100.425 45.692,102.606"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.33s" d="M67.515,117.676C67.515,117.676 62.464,93.59 50.031,77.572"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.792s" d="M50.031,77.572C45.681,71.967 40.426,67.35 34.169,65.098"/>
+    <path class="nm-edge nm-rev" pathLength="100" style="animation-delay:1.254s" d="M40.042,50.503C40.042,50.503 48.156,57.764 53.319,65.098"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.792s" d="M67.515,82.171C67.515,82.171 62.112,71.295 53.319,65.098"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.33s" d="M67.515,117.676L67.515,82.172"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.792s" d="M67.515,82.172L67.515,62.130"/>
+    <path class="nm-edge nm-rev" pathLength="100" style="animation-delay:1.254s" d="M58.814,50.503C58.814,50.503 65.253,56.962 67.515,62.13"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.33s" d="M45.692,102.606C45.692,102.606 46.929,91.158 50.031,77.572"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.792s" d="M50.031,77.572C50.956,73.522 52.046,69.282 53.319,65.098"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:1.254s" d="M53.319,65.098C54.87,60 56.691,54.987 58.814,50.503"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:1.716s" d="M58.814,50.503C61.289,45.274 64.174,40.766 67.515,37.688"/>
+    <path class="nm-edge nm-rev" pathLength="100" style="animation-delay:1.254s" d="M40.042,50.503C39.64,50.559 35.895,56.448 34.169,65.098"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.792s" d="M34.169,65.098C33.128,70.311 32.821,76.526 34.42,83.071"/>
+    <path class="nm-edge nm-rev" pathLength="100" style="animation-delay:0.792s" d="M34.42,83.071C35.984,89.477 39.375,96.199 45.692,102.606"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.792s" d="M16.159,87.903C16.159,87.903 25.774,82.826 34.419,83.071"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.792s" d="M50.031,77.572C50.031,77.572 41.608,78.083 34.419,83.071"/>
+    <path class="nm-edge nm-rev" pathLength="100" style="animation-delay:1.254s" d="M13.651,68.582C13.651,68.582 25.321,74.471 34.419,83.071"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.33s" d="M67.5155,117.676C83.2904,117.676,95.8345,114.736,104.8334,108.28"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.792s" d="M104.8334,108.28C111.5005,103.496,116.2225,96.782,118.8715,87.903"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:1.254s" d="M118.8715,87.903C120.5335,82.334,121.3795,75.913,121.3795,68.582"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.33s" d="M67.5155,117.676L89.3384,102.606"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.33s" d="M104.8334,108.28C104.8334,108.28,100.5325,107.694,89.3384,102.606"/>
+    <path class="nm-edge nm-rev" pathLength="100" style="animation-delay:0.792s" d="M118.8715,87.903C118.8715,87.903,103.7314,100.425,89.3384,102.606"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.33s" d="M67.5155,117.676C67.5155,117.676,72.5665,93.59,84.9994,77.572"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.792s" d="M84.9994,77.572C89.3495,71.967,94.6044,67.35,100.8615,65.098"/>
+    <path class="nm-edge nm-rev" pathLength="100" style="animation-delay:1.254s" d="M94.9885,50.503C94.9885,50.503,86.8744,57.764,81.7114,65.098"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.792s" d="M67.5155,82.171C67.5155,82.171,72.9185,71.295,81.7114,65.098"/>
+    <path class="nm-edge nm-rev" pathLength="100" style="animation-delay:1.254s" d="M76.2165,50.503C76.2165,50.503,69.7775,56.962,67.5155,62.13"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.33s" d="M89.3384,102.606C89.3384,102.606,88.1014,91.158,84.9994,77.572"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.792s" d="M84.9994,77.572C84.0744,73.522,82.9845,69.282,81.7114,65.098"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:1.254s" d="M81.7114,65.098C80.1604,60,78.3394,54.987,76.2165,50.503"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:1.716s" d="M76.2165,50.503C73.7415,45.274,70.8564,40.766,67.5155,37.688"/>
+    <path class="nm-edge nm-rev" pathLength="100" style="animation-delay:1.254s" d="M94.9885,50.503C95.3905,50.559,99.1354,56.448,100.8615,65.098"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.792s" d="M100.8615,65.098C101.9025,70.311,102.2095,76.526,100.6105,83.071"/>
+    <path class="nm-edge nm-rev" pathLength="100" style="animation-delay:0.792s" d="M100.6105,83.071C99.0455,89.477,95.6555,96.199,89.3384,102.606"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.792s" d="M118.8715,87.903C118.8715,87.903,109.2565,82.826,100.6115,83.071"/>
+    <path class="nm-edge" pathLength="100" style="animation-delay:0.792s" d="M84.9994,77.572C84.9994,77.572,93.4224,78.083,100.6115,83.071"/>
+    <path class="nm-edge nm-rev" pathLength="100" style="animation-delay:1.254s" d="M121.3795,68.582C121.3795,68.582,109.7095,74.471,100.6115,83.071"/>
+  </g>
+  <g id="Traffic">
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.487s" d="M67.515,117.676C51.74,117.676 39.196,114.736 30.197,108.28"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.861s" d="M30.197,108.28C23.53,103.496 18.808,96.782 16.159,87.903"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:4.235s" d="M16.159,87.903C14.497,82.334 13.651,75.913 13.651,68.582"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.487s" d="M67.515,117.676L45.692,102.606"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.487s" d="M30.197,108.28C30.197,108.28 34.498,107.694 45.692,102.606"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:3.861s" d="M16.159,87.903C16.159,87.903 31.299,100.425 45.692,102.606"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.487s" d="M67.515,117.676C67.515,117.676 62.464,93.59 50.031,77.572"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.861s" d="M50.031,77.572C45.681,71.967 40.426,67.35 34.169,65.098"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:4.235s" d="M40.042,50.503C40.042,50.503 48.156,57.764 53.319,65.098"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.861s" d="M67.515,82.171C67.515,82.171 62.112,71.295 53.319,65.098"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.487s" d="M67.515,117.676L67.515,82.172"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.861s" d="M67.515,82.172L67.515,62.130"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:4.235s" d="M58.814,50.503C58.814,50.503 65.253,56.962 67.515,62.13"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.487s" d="M45.692,102.606C45.692,102.606 46.929,91.158 50.031,77.572"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.861s" d="M50.031,77.572C50.956,73.522 52.046,69.282 53.319,65.098"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:4.235s" d="M53.319,65.098C54.87,60 56.691,54.987 58.814,50.503"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:4.609s" d="M58.814,50.503C61.289,45.274 64.174,40.766 67.515,37.688"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:4.235s" d="M40.042,50.503C39.64,50.559 35.895,56.448 34.169,65.098"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.861s" d="M34.169,65.098C33.128,70.311 32.821,76.526 34.42,83.071"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:3.861s" d="M34.42,83.071C35.984,89.477 39.375,96.199 45.692,102.606"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.861s" d="M16.159,87.903C16.159,87.903 25.774,82.826 34.419,83.071"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.861s" d="M50.031,77.572C50.031,77.572 41.608,78.083 34.419,83.071"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:4.235s" d="M13.651,68.582C13.651,68.582 25.321,74.471 34.419,83.071"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.487s" d="M67.5155,117.676C83.2904,117.676,95.8345,114.736,104.8334,108.28"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.861s" d="M104.8334,108.28C111.5005,103.496,116.2225,96.782,118.8715,87.903"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:4.235s" d="M118.8715,87.903C120.5335,82.334,121.3795,75.913,121.3795,68.582"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.487s" d="M67.5155,117.676L89.3384,102.606"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.487s" d="M104.8334,108.28C104.8334,108.28,100.5325,107.694,89.3384,102.606"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:3.861s" d="M118.8715,87.903C118.8715,87.903,103.7314,100.425,89.3384,102.606"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.487s" d="M67.5155,117.676C67.5155,117.676,72.5665,93.59,84.9994,77.572"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.861s" d="M84.9994,77.572C89.3495,71.967,94.6044,67.35,100.8615,65.098"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:4.235s" d="M94.9885,50.503C94.9885,50.503,86.8744,57.764,81.7114,65.098"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.861s" d="M67.5155,82.171C67.5155,82.171,72.9185,71.295,81.7114,65.098"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:4.235s" d="M76.2165,50.503C76.2165,50.503,69.7775,56.962,67.5155,62.13"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.487s" d="M89.3384,102.606C89.3384,102.606,88.1014,91.158,84.9994,77.572"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.861s" d="M84.9994,77.572C84.0744,73.522,82.9845,69.282,81.7114,65.098"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:4.235s" d="M81.7114,65.098C80.1604,60,78.3394,54.987,76.2165,50.503"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:4.609s" d="M76.2165,50.503C73.7415,45.274,70.8564,40.766,67.5155,37.688"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:4.235s" d="M94.9885,50.503C95.3905,50.559,99.1354,56.448,100.8615,65.098"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.861s" d="M100.8615,65.098C101.9025,70.311,102.2095,76.526,100.6105,83.071"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:3.861s" d="M100.6105,83.071C99.0455,89.477,95.6555,96.199,89.3384,102.606"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.861s" d="M118.8715,87.903C118.8715,87.903,109.2565,82.826,100.6115,83.071"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:3.861s" d="M84.9994,77.572C84.9994,77.572,93.4224,78.083,100.6115,83.071"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:4.235s" d="M121.3795,68.582C121.3795,68.582,109.7095,74.471,100.6115,83.071"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:9.248s" d="M67.515,117.676C51.74,117.676 39.196,114.736 30.197,108.28"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:9.248s" d="M30.197,108.28C23.53,103.496 18.808,96.782 16.159,87.903"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:9.248s" d="M16.159,87.903C14.497,82.334 13.651,75.913 13.651,68.582"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:8.874s" d="M67.515,117.676L45.692,102.606"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:9.248s" d="M30.197,108.28C30.197,108.28 34.498,107.694 45.692,102.606"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:9.248s" d="M16.159,87.903C16.159,87.903 31.299,100.425 45.692,102.606"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:8.874s" d="M67.515,117.676C67.515,117.676 62.464,93.59 50.031,77.572"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:8.874s" d="M50.031,77.572C45.681,71.967 40.426,67.35 34.169,65.098"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:8.5s" d="M40.042,50.503C40.042,50.503 48.156,57.764 53.319,65.098"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:8.5s" d="M67.515,82.171C67.515,82.171 62.112,71.295 53.319,65.098"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:8.874s" d="M67.515,117.676L67.515,82.172"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:8.5s" d="M67.515,82.172L67.515,62.130"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:8.126s" d="M58.814,50.503C58.814,50.503 65.253,56.962 67.515,62.13"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:8.874s" d="M45.692,102.606C45.692,102.606 46.929,91.158 50.031,77.572"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:8.5s" d="M50.031,77.572C50.956,73.522 52.046,69.282 53.319,65.098"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:8.126s" d="M53.319,65.098C54.87,60 56.691,54.987 58.814,50.503"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:7.752s" d="M58.814,50.503C61.289,45.274 64.174,40.766 67.515,37.688"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:8.874s" d="M40.042,50.503C39.64,50.559 35.895,56.448 34.169,65.098"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:8.874s" d="M34.169,65.098C33.128,70.311 32.821,76.526 34.42,83.071"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:8.874s" d="M34.42,83.071C35.984,89.477 39.375,96.199 45.692,102.606"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:9.248s" d="M16.159,87.903C16.159,87.903 25.774,82.826 34.419,83.071"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:8.874s" d="M50.031,77.572C50.031,77.572 41.608,78.083 34.419,83.071"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:9.248s" d="M13.651,68.582C13.651,68.582 25.321,74.471 34.419,83.071"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:9.248s" d="M67.5155,117.676C83.2904,117.676,95.8345,114.736,104.8334,108.28"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:9.248s" d="M104.8334,108.28C111.5005,103.496,116.2225,96.782,118.8715,87.903"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:9.248s" d="M118.8715,87.903C120.5335,82.334,121.3795,75.913,121.3795,68.582"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:8.874s" d="M67.5155,117.676L89.3384,102.606"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:9.248s" d="M104.8334,108.28C104.8334,108.28,100.5325,107.694,89.3384,102.606"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:9.248s" d="M118.8715,87.903C118.8715,87.903,103.7314,100.425,89.3384,102.606"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:8.874s" d="M67.5155,117.676C67.5155,117.676,72.5665,93.59,84.9994,77.572"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:8.874s" d="M84.9994,77.572C89.3495,71.967,94.6044,67.35,100.8615,65.098"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:8.5s" d="M94.9885,50.503C94.9885,50.503,86.8744,57.764,81.7114,65.098"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:8.5s" d="M67.5155,82.171C67.5155,82.171,72.9185,71.295,81.7114,65.098"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:8.126s" d="M76.2165,50.503C76.2165,50.503,69.7775,56.962,67.5155,62.13"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:8.874s" d="M89.3384,102.606C89.3384,102.606,88.1014,91.158,84.9994,77.572"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:8.5s" d="M84.9994,77.572C84.0744,73.522,82.9845,69.282,81.7114,65.098"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:8.126s" d="M81.7114,65.098C80.1604,60,78.3394,54.987,76.2165,50.503"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:7.752s" d="M76.2165,50.503C73.7415,45.274,70.8564,40.766,67.5155,37.688"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:8.874s" d="M94.9885,50.503C95.3905,50.559,99.1354,56.448,100.8615,65.098"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:8.874s" d="M100.8615,65.098C101.9025,70.311,102.2095,76.526,100.6105,83.071"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:8.874s" d="M100.6105,83.071C99.0455,89.477,95.6555,96.199,89.3384,102.606"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:9.248s" d="M118.8715,87.903C118.8715,87.903,109.2565,82.826,100.6115,83.071"/>
+    <path class="nm-pk" pathLength="100" style="animation-delay:8.874s" d="M84.9994,77.572C84.9994,77.572,93.4224,78.083,100.6115,83.071"/>
+    <path class="nm-pk nm-rev" pathLength="100" style="animation-delay:9.248s" d="M121.3795,68.582C121.3795,68.582,109.7095,74.471,100.6115,83.071"/>
+  </g>
+  <g id="Nodes">
+    <circle class="nm-node" cx="67.515" cy="117.676" r="5.428" style="animation-delay:0.11s"/>
+    <circle class="nm-node" cx="30.197" cy="108.28" r="3.762" style="animation-delay:0.682s"/>
+    <circle class="nm-node" cx="45.692" cy="102.606" r="4.489" style="animation-delay:0.682s"/>
+    <circle class="nm-node" cx="67.515" cy="82.172" r="4.489" style="animation-delay:0.682s"/>
+    <circle class="nm-node" cx="16.159" cy="87.903" r="3.762" style="animation-delay:1.144s"/>
+    <circle class="nm-node" cx="34.53" cy="83.175" r="3.762" style="animation-delay:1.144s"/>
+    <circle class="nm-node" cx="50.031" cy="77.572" r="3.762" style="animation-delay:0.682s"/>
+    <circle class="nm-node" cx="67.515" cy="62.13" r="3.762" style="animation-delay:1.144s"/>
+    <circle class="nm-node" cx="67.516" cy="37.688" r="3.762" style="animation-delay:2.068s"/>
+    <circle class="nm-node" cx="13.651" cy="68.582" r="3.544" style="animation-delay:1.606s"/>
+    <circle class="nm-node" cx="34.168" cy="65.098" r="3.544" style="animation-delay:1.144s"/>
+    <circle class="nm-node" cx="40.042" cy="50.503" r="2.963" style="animation-delay:1.606s"/>
+    <circle class="nm-node" cx="58.814" cy="50.503" r="2.963" style="animation-delay:1.606s"/>
+    <circle class="nm-node" cx="53.319" cy="65.098" r="3.544" style="animation-delay:1.144s"/>
+    <circle class="nm-node" cx="104.833" cy="108.28" r="3.762" style="animation-delay:0.682s"/>
+    <circle class="nm-node" cx="89.338" cy="102.606" r="4.489" style="animation-delay:0.682s"/>
+    <circle class="nm-node" cx="118.872" cy="87.903" r="3.762" style="animation-delay:1.144s"/>
+    <circle class="nm-node" cx="100.5" cy="83.175" r="3.762" style="animation-delay:1.144s"/>
+    <circle class="nm-node" cx="85" cy="77.572" r="3.762" style="animation-delay:0.682s"/>
+    <circle class="nm-node" cx="121.379" cy="68.582" r="3.544" style="animation-delay:1.606s"/>
+    <circle class="nm-node" cx="100.862" cy="65.098" r="3.544" style="animation-delay:1.144s"/>
+    <circle class="nm-node" cx="94.988" cy="50.503" r="2.963" style="animation-delay:1.606s"/>
+    <circle class="nm-node" cx="76.217" cy="50.503" r="2.963" style="animation-delay:1.606s"/>
+    <circle class="nm-node" cx="81.711" cy="65.098" r="3.544" style="animation-delay:1.144s"/>
+  </g>
+  <g id="Pings">
+    <circle class="nm-ping" cx="67.515" cy="117.676" r="5.428" style="animation-delay:0.27s"/>
+    <circle class="nm-ping" cx="30.197" cy="108.28" r="3.762" style="animation-delay:0.842s"/>
+    <circle class="nm-ping" cx="45.692" cy="102.606" r="4.489" style="animation-delay:0.842s"/>
+    <circle class="nm-ping" cx="67.515" cy="82.172" r="4.489" style="animation-delay:0.842s"/>
+    <circle class="nm-ping" cx="16.159" cy="87.903" r="3.762" style="animation-delay:1.304s"/>
+    <circle class="nm-ping" cx="34.53" cy="83.175" r="3.762" style="animation-delay:1.304s"/>
+    <circle class="nm-ping" cx="50.031" cy="77.572" r="3.762" style="animation-delay:0.842s"/>
+    <circle class="nm-ping" cx="67.515" cy="62.13" r="3.762" style="animation-delay:1.304s"/>
+    <circle class="nm-ping" cx="67.516" cy="37.688" r="3.762" style="animation-delay:2.228s"/>
+    <circle class="nm-ping" cx="13.651" cy="68.582" r="3.544" style="animation-delay:1.766s"/>
+    <circle class="nm-ping" cx="34.168" cy="65.098" r="3.544" style="animation-delay:1.304s"/>
+    <circle class="nm-ping" cx="40.042" cy="50.503" r="2.963" style="animation-delay:1.766s"/>
+    <circle class="nm-ping" cx="58.814" cy="50.503" r="2.963" style="animation-delay:1.766s"/>
+    <circle class="nm-ping" cx="53.319" cy="65.098" r="3.544" style="animation-delay:1.304s"/>
+    <circle class="nm-ping" cx="104.833" cy="108.28" r="3.762" style="animation-delay:0.842s"/>
+    <circle class="nm-ping" cx="89.338" cy="102.606" r="4.489" style="animation-delay:0.842s"/>
+    <circle class="nm-ping" cx="118.872" cy="87.903" r="3.762" style="animation-delay:1.304s"/>
+    <circle class="nm-ping" cx="100.5" cy="83.175" r="3.762" style="animation-delay:1.304s"/>
+    <circle class="nm-ping" cx="85" cy="77.572" r="3.762" style="animation-delay:0.842s"/>
+    <circle class="nm-ping" cx="121.379" cy="68.582" r="3.544" style="animation-delay:1.766s"/>
+    <circle class="nm-ping" cx="100.862" cy="65.098" r="3.544" style="animation-delay:1.304s"/>
+    <circle class="nm-ping" cx="94.988" cy="50.503" r="2.963" style="animation-delay:1.766s"/>
+    <circle class="nm-ping" cx="76.217" cy="50.503" r="2.963" style="animation-delay:1.766s"/>
+    <circle class="nm-ping" cx="81.711" cy="65.098" r="3.544" style="animation-delay:1.304s"/>
+  </g>
+  <g id="Hits">
+    <circle class="nm-halo" cx="67.515" cy="117.676" r="5.428" style="animation-delay:3.245s"/>
+    <circle class="nm-hit" cx="67.515" cy="117.676" r="5.157" style="animation-delay:3.245s"/>
+    <circle class="nm-halo" cx="30.197" cy="108.28" r="3.762" style="animation-delay:3.861s"/>
+    <circle class="nm-hit" cx="30.197" cy="108.28" r="3.574" style="animation-delay:3.861s"/>
+    <circle class="nm-halo" cx="45.692" cy="102.606" r="4.489" style="animation-delay:3.861s"/>
+    <circle class="nm-hit" cx="45.692" cy="102.606" r="4.265" style="animation-delay:3.861s"/>
+    <circle class="nm-halo" cx="67.515" cy="82.172" r="4.489" style="animation-delay:3.861s"/>
+    <circle class="nm-hit" cx="67.515" cy="82.172" r="4.265" style="animation-delay:3.861s"/>
+    <circle class="nm-halo" cx="16.159" cy="87.903" r="3.762" style="animation-delay:4.235s"/>
+    <circle class="nm-hit" cx="16.159" cy="87.903" r="3.574" style="animation-delay:4.235s"/>
+    <circle class="nm-halo" cx="34.53" cy="83.175" r="3.762" style="animation-delay:4.235s"/>
+    <circle class="nm-hit" cx="34.53" cy="83.175" r="3.574" style="animation-delay:4.235s"/>
+    <circle class="nm-halo" cx="50.031" cy="77.572" r="3.762" style="animation-delay:3.861s"/>
+    <circle class="nm-hit" cx="50.031" cy="77.572" r="3.574" style="animation-delay:3.861s"/>
+    <circle class="nm-halo" cx="67.515" cy="62.13" r="3.762" style="animation-delay:4.235s"/>
+    <circle class="nm-hit" cx="67.515" cy="62.13" r="3.574" style="animation-delay:4.235s"/>
+    <circle class="nm-halo" cx="67.516" cy="37.688" r="3.762" style="animation-delay:4.983s"/>
+    <circle class="nm-hit" cx="67.516" cy="37.688" r="3.574" style="animation-delay:4.983s"/>
+    <circle class="nm-halo" cx="13.651" cy="68.582" r="3.544" style="animation-delay:4.609s"/>
+    <circle class="nm-hit" cx="13.651" cy="68.582" r="3.367" style="animation-delay:4.609s"/>
+    <circle class="nm-halo" cx="34.168" cy="65.098" r="3.544" style="animation-delay:4.235s"/>
+    <circle class="nm-hit" cx="34.168" cy="65.098" r="3.367" style="animation-delay:4.235s"/>
+    <circle class="nm-halo" cx="40.042" cy="50.503" r="2.963" style="animation-delay:4.609s"/>
+    <circle class="nm-hit" cx="40.042" cy="50.503" r="2.815" style="animation-delay:4.609s"/>
+    <circle class="nm-halo" cx="58.814" cy="50.503" r="2.963" style="animation-delay:4.609s"/>
+    <circle class="nm-hit" cx="58.814" cy="50.503" r="2.815" style="animation-delay:4.609s"/>
+    <circle class="nm-halo" cx="53.319" cy="65.098" r="3.544" style="animation-delay:4.235s"/>
+    <circle class="nm-hit" cx="53.319" cy="65.098" r="3.367" style="animation-delay:4.235s"/>
+    <circle class="nm-halo" cx="104.833" cy="108.28" r="3.762" style="animation-delay:3.861s"/>
+    <circle class="nm-hit" cx="104.833" cy="108.28" r="3.574" style="animation-delay:3.861s"/>
+    <circle class="nm-halo" cx="89.338" cy="102.606" r="4.489" style="animation-delay:3.861s"/>
+    <circle class="nm-hit" cx="89.338" cy="102.606" r="4.265" style="animation-delay:3.861s"/>
+    <circle class="nm-halo" cx="118.872" cy="87.903" r="3.762" style="animation-delay:4.235s"/>
+    <circle class="nm-hit" cx="118.872" cy="87.903" r="3.574" style="animation-delay:4.235s"/>
+    <circle class="nm-halo" cx="100.5" cy="83.175" r="3.762" style="animation-delay:4.235s"/>
+    <circle class="nm-hit" cx="100.5" cy="83.175" r="3.574" style="animation-delay:4.235s"/>
+    <circle class="nm-halo" cx="85" cy="77.572" r="3.762" style="animation-delay:3.861s"/>
+    <circle class="nm-hit" cx="85" cy="77.572" r="3.574" style="animation-delay:3.861s"/>
+    <circle class="nm-halo" cx="121.379" cy="68.582" r="3.544" style="animation-delay:4.609s"/>
+    <circle class="nm-hit" cx="121.379" cy="68.582" r="3.367" style="animation-delay:4.609s"/>
+    <circle class="nm-halo" cx="100.862" cy="65.098" r="3.544" style="animation-delay:4.235s"/>
+    <circle class="nm-hit" cx="100.862" cy="65.098" r="3.367" style="animation-delay:4.235s"/>
+    <circle class="nm-halo" cx="94.988" cy="50.503" r="2.963" style="animation-delay:4.609s"/>
+    <circle class="nm-hit" cx="94.988" cy="50.503" r="2.815" style="animation-delay:4.609s"/>
+    <circle class="nm-halo" cx="76.217" cy="50.503" r="2.963" style="animation-delay:4.609s"/>
+    <circle class="nm-hit" cx="76.217" cy="50.503" r="2.815" style="animation-delay:4.609s"/>
+    <circle class="nm-halo" cx="81.711" cy="65.098" r="3.544" style="animation-delay:4.235s"/>
+    <circle class="nm-hit" cx="81.711" cy="65.098" r="3.367" style="animation-delay:4.235s"/>
+    <circle class="nm-halo" cx="67.515" cy="117.676" r="5.428" style="animation-delay:9.248s"/>
+    <circle class="nm-hit" cx="67.515" cy="117.676" r="5.157" style="animation-delay:9.248s"/>
+    <circle class="nm-halo" cx="30.197" cy="108.28" r="3.762" style="animation-delay:9.622s"/>
+    <circle class="nm-hit" cx="30.197" cy="108.28" r="3.574" style="animation-delay:9.622s"/>
+    <circle class="nm-halo" cx="45.692" cy="102.606" r="4.489" style="animation-delay:9.248s"/>
+    <circle class="nm-hit" cx="45.692" cy="102.606" r="4.265" style="animation-delay:9.248s"/>
+    <circle class="nm-halo" cx="67.515" cy="82.172" r="4.489" style="animation-delay:8.874s"/>
+    <circle class="nm-hit" cx="67.515" cy="82.172" r="4.265" style="animation-delay:8.874s"/>
+    <circle class="nm-halo" cx="16.159" cy="87.903" r="3.762" style="animation-delay:9.622s"/>
+    <circle class="nm-hit" cx="16.159" cy="87.903" r="3.574" style="animation-delay:9.622s"/>
+    <circle class="nm-halo" cx="34.53" cy="83.175" r="3.762" style="animation-delay:9.248s"/>
+    <circle class="nm-hit" cx="34.53" cy="83.175" r="3.574" style="animation-delay:9.248s"/>
+    <circle class="nm-halo" cx="50.031" cy="77.572" r="3.762" style="animation-delay:8.874s"/>
+    <circle class="nm-hit" cx="50.031" cy="77.572" r="3.574" style="animation-delay:8.874s"/>
+    <circle class="nm-halo" cx="67.515" cy="62.13" r="3.762" style="animation-delay:8.5s"/>
+    <circle class="nm-hit" cx="67.515" cy="62.13" r="3.574" style="animation-delay:8.5s"/>
+    <circle class="nm-halo" cx="67.516" cy="37.688" r="3.762" style="animation-delay:7.51s"/>
+    <circle class="nm-hit" cx="67.516" cy="37.688" r="3.574" style="animation-delay:7.51s"/>
+    <circle class="nm-halo" cx="13.651" cy="68.582" r="3.544" style="animation-delay:9.622s"/>
+    <circle class="nm-hit" cx="13.651" cy="68.582" r="3.367" style="animation-delay:9.622s"/>
+    <circle class="nm-halo" cx="34.168" cy="65.098" r="3.544" style="animation-delay:9.248s"/>
+    <circle class="nm-hit" cx="34.168" cy="65.098" r="3.367" style="animation-delay:9.248s"/>
+    <circle class="nm-halo" cx="40.042" cy="50.503" r="2.963" style="animation-delay:8.874s"/>
+    <circle class="nm-hit" cx="40.042" cy="50.503" r="2.815" style="animation-delay:8.874s"/>
+    <circle class="nm-halo" cx="58.814" cy="50.503" r="2.963" style="animation-delay:8.126s"/>
+    <circle class="nm-hit" cx="58.814" cy="50.503" r="2.815" style="animation-delay:8.126s"/>
+    <circle class="nm-halo" cx="53.319" cy="65.098" r="3.544" style="animation-delay:8.5s"/>
+    <circle class="nm-hit" cx="53.319" cy="65.098" r="3.367" style="animation-delay:8.5s"/>
+    <circle class="nm-halo" cx="104.833" cy="108.28" r="3.762" style="animation-delay:9.622s"/>
+    <circle class="nm-hit" cx="104.833" cy="108.28" r="3.574" style="animation-delay:9.622s"/>
+    <circle class="nm-halo" cx="89.338" cy="102.606" r="4.489" style="animation-delay:9.248s"/>
+    <circle class="nm-hit" cx="89.338" cy="102.606" r="4.265" style="animation-delay:9.248s"/>
+    <circle class="nm-halo" cx="118.872" cy="87.903" r="3.762" style="animation-delay:9.622s"/>
+    <circle class="nm-hit" cx="118.872" cy="87.903" r="3.574" style="animation-delay:9.622s"/>
+    <circle class="nm-halo" cx="100.5" cy="83.175" r="3.762" style="animation-delay:9.248s"/>
+    <circle class="nm-hit" cx="100.5" cy="83.175" r="3.574" style="animation-delay:9.248s"/>
+    <circle class="nm-halo" cx="85" cy="77.572" r="3.762" style="animation-delay:8.874s"/>
+    <circle class="nm-hit" cx="85" cy="77.572" r="3.574" style="animation-delay:8.874s"/>
+    <circle class="nm-halo" cx="121.379" cy="68.582" r="3.544" style="animation-delay:9.622s"/>
+    <circle class="nm-hit" cx="121.379" cy="68.582" r="3.367" style="animation-delay:9.622s"/>
+    <circle class="nm-halo" cx="100.862" cy="65.098" r="3.544" style="animation-delay:9.248s"/>
+    <circle class="nm-hit" cx="100.862" cy="65.098" r="3.367" style="animation-delay:9.248s"/>
+    <circle class="nm-halo" cx="94.988" cy="50.503" r="2.963" style="animation-delay:8.874s"/>
+    <circle class="nm-hit" cx="94.988" cy="50.503" r="2.815" style="animation-delay:8.874s"/>
+    <circle class="nm-halo" cx="76.217" cy="50.503" r="2.963" style="animation-delay:8.126s"/>
+    <circle class="nm-hit" cx="76.217" cy="50.503" r="2.815" style="animation-delay:8.126s"/>
+    <circle class="nm-halo" cx="81.711" cy="65.098" r="3.544" style="animation-delay:8.5s"/>
+    <circle class="nm-hit" cx="81.711" cy="65.098" r="3.367" style="animation-delay:8.5s"/>
+  </g>
+</g>
+</svg>

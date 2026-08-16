@@ -13,8 +13,8 @@ import {DISCORD_INVITE_URL} from '@site/src/constants/links';
 
 <div className="nswmesh-brand-hero">
   <div className="nswmesh-brand-hero__logo" role="img" aria-label="NSW Mesh logo">
-    <img className="nswmesh-theme-logo nswmesh-theme-logo--light" src={useBaseUrl('/img/logo-primary.svg')} alt="" aria-hidden="true" />
-    <img className="nswmesh-theme-logo nswmesh-theme-logo--dark" src={useBaseUrl('/img/logo-primary-dark.svg')} alt="" aria-hidden="true" />
+    <img className="nswmesh-theme-logo nswmesh-theme-logo--light" src={useBaseUrl('/img/logo-primary-animated.svg')} alt="" aria-hidden="true" />
+    <img className="nswmesh-theme-logo nswmesh-theme-logo--dark" src={useBaseUrl('/img/logo-primary-dark-animated.svg')} alt="" aria-hidden="true" />
   </div>
   <p>Community-maintained knowledge for everything mesh in Sydney and throughout New South Wales.</p>
   <div className="nswmesh-home-links">
