@@ -429,7 +429,7 @@ function RegionMapLegend() {
                 <span className="nswmesh-region-map__legend-swatch nswmesh-region-map__legend-swatch--active" />
                 Active
               </div>
-              <p className="nswmesh-region-map__legend-description">Established, with channels and scopes in use.</p>
+              <p className="nswmesh-region-map__legend-description">Established, with channels and scopes in active use.</p>
             </div>
             <div className="nswmesh-region-map__legend-item">
               <div className="nswmesh-region-map__legend-item-label">
@@ -437,7 +437,7 @@ function RegionMapLegend() {
                 Tentative
               </div>
               <p className="nswmesh-region-map__legend-description">
-                Mesh activity, but details and borders aren&apos;t confirmed.
+                In a transitional period of being set up, with details not final and scopes partially or not yet in use.
               </p>
             </div>
             <div className="nswmesh-region-map__legend-item">
@@ -445,7 +445,8 @@ function RegionMapLegend() {
                 <span className="nswmesh-region-map__legend-swatch nswmesh-region-map__legend-swatch--future" />
                 Future
               </div>
-              <p className="nswmesh-region-map__legend-description">An early guess, entirely subject to change.</p>
+              <p className="nswmesh-region-map__legend-description">Mesh activity but too early to confirm details and borders.
+              </p>
             </div>
           </div>
         </div>

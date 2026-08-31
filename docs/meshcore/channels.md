@@ -108,7 +108,7 @@ Scoped to a particular region. These are also listed in each region's popup on t
 | `#bathurst` | `au-nsw-bhs` | Bathurst & Central West conversation and coordination. |
 | `#illawarra` | `au-nsw-wol` | Illawarra & Wollongong conversation and coordination. |
 | `#nowra` | `au-nsw-noa` | Nowra and Shoalhaven conversation and coordination. |
-| `#riverina` | `TBC` | Wagga Wagga & Riverina conversation and coordination. |
+| `#riverina` | `au-hume` | Wagga Wagga & Riverina conversation and coordination. |
 | `#canberra` | `au-act`| Canberra conversation and coordination. |
 | `#farsouthcoast` | `TBC` | Far South Coast conversation and coordination. |
 | `#hume` | `au-hume` | Albury & Wodonga conversation and coordination. |
