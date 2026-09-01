@@ -445,7 +445,7 @@ function RegionMapLegend() {
                 <span className="nswmesh-region-map__legend-swatch nswmesh-region-map__legend-swatch--future" />
                 Future
               </div>
-              <p className="nswmesh-region-map__legend-description">Mesh activity but too early to confirm details and borders.
+              <p className="nswmesh-region-map__legend-description">In initial planning or proposals, with all details subject to change.
               </p>
             </div>
           </div>
