@@ -30,9 +30,11 @@ For communities that border multiple states (e.g. Albury/Wodonga), they may use 
 
 Region scopes act as simple whitelist filters on repeaters. Configuring a repeater with specific region scopes gives it explicit permission to forward traffic tagged with those matching scopes; everything else is dropped by default.
 
-For example, a Wollongong repeater configured with `au`, `au-nsw`, and `au-nsw-wol` will forward local chatter tagged with `au-nsw-wol`. However, if a local conversation occurs in Sydney tagged with `au-nsw-syd`, the Wollongong repeater ignores those packets. This keeps Sydney traffic local, preserving Wollongong’s own airtime and keeping network reliability up. 
+For example, a Wollongong repeater configured with `au`, `au-nsw`, and `au-nsw-wol` will forward local chatter tagged with `au-nsw-wol`. However, if a local conversation occurs in Sydney tagged with `au-nsw-syd`, the Wollongong repeater ignores those packets. This keeps Sydney traffic local, preserving Wollongong’s own airtime and keeping network reliability up.
 
 This selective isolation helps limit the impact on other regions when one region has high activity. Heavy chatter in Newcastle shouldn't cause two neighbours in Sydney to drop messages. The same logic applies at the state level: containing `au-nsw` traffic prevents NSW targeted chatter from polluting the Victoria mesh. At present, traffic that is unscoped (represented by the `*` scope in firmware) or scoped to `au` will traverse the entire mesh. Note that in future it is likely that repeaters will start to block unscoped traffic, preferring instead that all traffic intended to flood the entire network use the `au` scope.
+
+Note that scopes are used to contain traffic within certain bounds and not to route traffic to a specific destination, which is a common misinterpretation. To reach further than your local area, you use a wider net scope, such as using `au-nsw` to talk from Wollongong to Sydney. Scopes rely on every repeater in the chain being configured with them, so sending a message scoped to `au-nsw-syd` while in an area where only `au-nsw-wol` is configured will result in that message not going anywhere.
 
 For details on how these scopes map to channels, see the [Channels](./channels) page.
 
