@@ -57,7 +57,7 @@ If you're close to a border, you may choose to include extra scopes depending on
 
 As mentioned above, configuring region scopes tells a repeater what it should repeat. Only the explicitly allowed scopes will be forwarded; everything else is dropped by default.
 
-All NSW (and ACT) repeaters should allow `au` and `au-nsw`. Generally, you should only add the IATA-level region scope that matches the repeater's geographic location. For example, Sydney repeaters should allow `au-nsw-syd`, while Newcastle and Hunter repeaters should allow `au-nsw-ntl`.
+All NSW (and ACT) repeaters should allow `au` and `au-nsw`. Generally, you should only add the IATA-level region scope that matches the repeater's geographic location. For example, Sydney repeaters should allow `au-nsw-syd`, while Wollongong repeaters should allow `au-nsw-wol`, though there are some regions that expand further or include extra scopes.
 
 While the suggested scopes work for the vast majority of situations, region boundaries aren't always set in stone. You might opt to add a neighbouring scope if:
 * Your repeater provides an irreplaceable link within a neighbouring region (e.g. if two WOL repeaters rely on a SYD repeater in the middle to connect to each other).
